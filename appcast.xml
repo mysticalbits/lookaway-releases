@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>LookAway</title>
+        <item>
+            <title>0.9.0</title>
+            <pubDate>Sun, 15 Oct 2023 17:04:02 +0530</pubDate>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>0.9.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/download/0.9.0/LookAway.0.9.dmg" length="1692094" type="application/octet-stream" sparkle:edSignature="WU/cHHu5fHrzEpfydGR+ftONg+YbAueIqHLPcU3GelK6OLfTIPXI3j3YSTxDnuMgHGc/1f8BIUXP++omrcJBCQ=="/>
+        </item>
+    </channel>
+</rss>
