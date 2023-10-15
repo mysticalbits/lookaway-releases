@@ -3,6 +3,17 @@
     <channel>
         <title>LookAway</title>
         <item>
+            <title>0.9.1</title>
+            <pubDate>Sun, 15 Oct 2023 17:53:33 +0530</pubDate>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>0.9.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/download/0.9.1/LookAway.0.9.1.dmg" length="1691894" type="application/octet-stream" sparkle:edSignature="mLFAn4z+Dp7Me0He9fKuS7X5IimcidP/Jp3S6LqdMhfqes5pKtCpB4egRCUlxVisXzGXliPRBQJXaX1P7aXqAg=="/>
+            <sparkle:deltas>
+                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/download/0.9.1/LookAway.0.9.12-1.delta" sparkle:deltaFrom="1" length="25970" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="HgkvfrnTTHejTWIJ82ReuLAGstl9i0YN/x964gghalimBYVXK22gXpVnJQXnAvRpFtkdGh59vol3kXRoVXYIDg=="/>
+            </sparkle:deltas>
+        </item>
+        <item>
             <title>0.9.0</title>
             <pubDate>Sun, 15 Oct 2023 17:04:02 +0530</pubDate>
             <sparkle:version>1</sparkle:version>
