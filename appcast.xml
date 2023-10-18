@@ -9,35 +9,6 @@
             <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
             <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
             <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway.dmg" length="3245015" type="application/octet-stream" sparkle:edSignature="O24g7BbpWbyH/nLX2hHTtyWXYSLo9SvPvrY1hv9os8LXTunMLrABF5HJfqkqho6bA1f/AeuLMld7CYrYss1aCw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway107-106.delta" sparkle:deltaFrom="106" length="123258" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="4pRnn8mAYX2klK5tICUGk2u1MDLtisA7iONvh58X1d+aUb5qA+3G6VO7J1tkXt84gbhD+08igWTdOP/nGkz9Dg=="/>
-                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway107-2.delta" sparkle:deltaFrom="2" length="1593894" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="6/rui+Dy1qCIQo7D3DmNuajsOdkjqPODdpG8yv/zx5qQPVFJJKA6NVz77ivpCruoo5OokOIrYF1OO+/TB/U1Cg=="/>
-                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway107-1.delta" sparkle:deltaFrom="1" length="1594926" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="VWV0dCQEszKh2YEHeYhN7WdOZ3fX6WYwuG8plYwoDfFRErr/hqgHnPFCpYeiIxwy8eRsqe6ut5ER8pGilS3kDQ=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.0</title>
-            <pubDate>Wed, 18 Oct 2023 14:00:06 +0530</pubDate>
-            <sparkle:version>106</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway-106.dmg" length="3245169" type="application/octet-stream" sparkle:edSignature="csTdGx9P2unzM0MiKqCNc4Pl+rR/Nj20ixQUKcy5SLWylFCPlo2f8//DUORJDYsXUOp3VRSMuASgnaPr55VcAw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway106-2.delta" sparkle:deltaFrom="2" length="1595798" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="CzjxEpefCwvtlHlew9mPSCwxEVePG0Tt5nMJOYiRdsdBt4rSd3+eRiV/qv4+hrCvcxzmDk51WyQX2tuDccziAQ=="/>
-                <enclosure url="https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway106-1.delta" sparkle:deltaFrom="1" length="1595626" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="6A4l+eT+CkZ3TtDH90XFivsgGYYHr17Ws7GF5YbAWVb2tj08w0CLWF8j2cJKZP4/0xRClAfGHFV0/vhSARj4Bg=="/>
-            </sparkle:deltas>
-        </item>
-        <item>
-            <title>1.0.0</title>
-            <pubDate>Wed, 18 Oct 2023 13:40:44 +0530</pubDate>
-            <sparkle:version>105</sparkle:version>
-            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
-            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
-            <enclosure url="https://mysticalbits.com/lookaway-releases/LookAway.dmg" length="3245212" type="application/octet-stream" sparkle:edSignature="KxWTjWngAyG6mjPV4JzUf9IrmC6n0PU3MYj0YTxlInSvca/YLruVrxKujBlNpuyqO1QmjbWoocX6FWGlHvQQCw=="/>
-            <sparkle:deltas>
-                <enclosure url="https://mysticalbits.com/lookaway-releases/LookAway%201.0105-2.delta" sparkle:deltaFrom="2" length="1595542" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="tx6ly+lT1LiTw6Q8cOtC2t3xlgXuHQ15d5CsWjBIPt0BBdmN4a1wf0FLrDzH0R9mATB4runiURtygeDS9LebCw=="/>
-                <enclosure url="https://mysticalbits.com/lookaway-releases/LookAway%201.0105-1.delta" sparkle:deltaFrom="1" length="1596390" type="application/octet-stream" sparkle:deltaFromSparkleExecutableSize="865120" sparkle:deltaFromSparkleLocales="de,he,ar,el,ja,fa,en" sparkle:edSignature="0F2L71LC6N1VUBqGfTnF/SINmhmIQxFvnEjQzxT+t5PbLOWiTFgj6VYRdNuIlZ7iYqrfU7KPoeDc14OTzvTSCA=="/>
-            </sparkle:deltas>
         </item>
     </channel>
 </rss>
