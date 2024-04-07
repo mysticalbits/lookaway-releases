@@ -5,8 +5,12 @@ It's gentle, smart, and fully customizable. Once launched, it takes a back seat 
 ## Install
 
 There are two ways to install LookAway:
-- Download the DMG from [here](https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway.dmg)
-- Install via Homebrew: `$ brew install --cask lookaway`
+
+### DMG
+Download the DMG from [here](https://github.com/mysticalbits/lookaway-releases/releases/latest/download/LookAway.dmg)
+
+### Homebrew
+`$ brew install --cask lookaway`
 
 ## Requirements
 
