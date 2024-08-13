@@ -5,62 +5,67 @@ on:
     types: [published]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   update-release-summary:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-      with:
-        token: ${{ secrets.PAT }}
-
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
-
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install PyGithub
 
     - name: Update Release Summary
-      env:
-        GH_TOKEN: ${{ secrets.PAT }}
-      run: |
-        python - <<EOF
-        import os
-        import json
-        from github import Github
-        from datetime import datetime
+      uses: actions/github-script@v6
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+          const { owner, repo } = context.repo;
+          
+          async function getReleaseSummary() {
+            const releases = await github.rest.repos.listReleases({ owner, repo });
+            return releases.data.map(release => ({
+              id: release.id,
+              tag_name: release.tag_name,
+              published_at: release.published_at
+            }));
+          }
 
-        g = Github(os.environ['GH_TOKEN'])
-        repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
+          async function updateFile(path, content, sha) {
+            try {
+              await github.rest.repos.createOrUpdateFileContents({
+                owner,
+                repo,
+                path,
+                message: 'Update release summary',
+                content: Buffer.from(content).toString('base64'),
+                sha: sha
+              });
+              console.log(`${path} updated successfully`);
+            } catch (error) {
+              console.error(`Error updating ${path}:`, error);
+              throw error;
+            }
+          }
 
-        releases = []
-        for release in repo.get_releases():
-            releases.append({
-                'id': release.id,
-                'tag_name': release.tag_name,
-                'published_at': release.published_at.isoformat()
-            })
+          try {
+            const summary = await getReleaseSummary();
+            const content = JSON.stringify(summary, null, 2);
 
-        content = json.dumps(releases, indent=2)
-
-        try:
-            file = repo.get_contents("release_summary.json")
-            repo.update_file("release_summary.json", "Update release summary", content, file.sha)
-            print("Updated release_summary.json")
-        except:
-            repo.create_file("release_summary.json", "Create release summary", content)
-            print("Created release_summary.json")
-
-        EOF
-
-    - name: Commit and push if changed
-      run: |
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git config --global user.name "GitHub Actions"
-        git pull
-        git add release_summary.json
-        git commit -m "Update release summary" || exit 0
-        git push
+            try {
+              const file = await github.rest.repos.getContent({
+                owner,
+                repo,
+                path: 'release_summary.json'
+              });
+              await updateFile('release_summary.json', content, file.data.sha);
+            } catch (error) {
+              if (error.status === 404) {
+                await updateFile('release_summary.json', content);
+              } else {
+                throw error;
+              }
+            }
+          } catch (error) {
+            console.error('Error in workflow:', error);
+            core.setFailed(error.message);
+          }
