@@ -3,13 +3,15 @@ name: Update Release Summary
 on:
   release:
     types: [published]
-  workflow_dispatch:  # This allows manual triggering
+  workflow_dispatch:
 
 jobs:
   update-release-summary:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.PAT }}
 
     - name: Set up Python
       uses: actions/setup-python@v2
@@ -23,7 +25,7 @@ jobs:
 
     - name: Update Release Summary
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.PAT }}
       run: |
         python - <<EOF
         import os
@@ -31,7 +33,7 @@ jobs:
         from github import Github
         from datetime import datetime
 
-        g = Github(os.environ['GITHUB_TOKEN'])
+        g = Github(os.environ['GH_TOKEN'])
         repo = g.get_repo(os.environ['GITHUB_REPOSITORY'])
 
         releases = []
@@ -42,31 +44,23 @@ jobs:
                 'published_at': release.published_at.isoformat()
             })
 
-        with open('release_summary.json', 'w') as f:
-            json.dump(releases, f, indent=2)
+        content = json.dumps(releases, indent=2)
 
         try:
-            contents = repo.get_contents("release_summary.json")
-            repo.update_file(
-                contents.path,
-                "Update release summary",
-                json.dumps(releases, indent=2),
-                contents.sha,
-                branch="main"
-            )
+            file = repo.get_contents("release_summary.json")
+            repo.update_file("release_summary.json", "Update release summary", content, file.sha)
+            print("Updated release_summary.json")
         except:
-            repo.create_file(
-                "release_summary.json",
-                "Create release summary",
-                json.dumps(releases, indent=2),
-                branch="main"
-            )
+            repo.create_file("release_summary.json", "Create release summary", content)
+            print("Created release_summary.json")
+
         EOF
 
     - name: Commit and push if changed
       run: |
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
         git config --global user.name "GitHub Actions"
+        git pull
         git add release_summary.json
         git commit -m "Update release summary" || exit 0
         git push
