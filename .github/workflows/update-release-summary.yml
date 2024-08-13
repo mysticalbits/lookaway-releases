@@ -3,6 +3,7 @@ name: Update Release Summary
 on:
   release:
     types: [published]
+  workflow_dispatch:  # This allows manual triggering
 
 jobs:
   update-release-summary:
@@ -44,13 +45,22 @@ jobs:
         with open('release_summary.json', 'w') as f:
             json.dump(releases, f, indent=2)
 
-        repo.create_file(
-            "release_summary.json",
-            "Update release summary",
-            json.dumps(releases, indent=2),
-            branch="main",
-            update=True
-        )
+        try:
+            contents = repo.get_contents("release_summary.json")
+            repo.update_file(
+                contents.path,
+                "Update release summary",
+                json.dumps(releases, indent=2),
+                contents.sha,
+                branch="main"
+            )
+        except:
+            repo.create_file(
+                "release_summary.json",
+                "Create release summary",
+                json.dumps(releases, indent=2),
+                branch="main"
+            )
         EOF
 
     - name: Commit and push if changed
