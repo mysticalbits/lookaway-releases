@@ -14,7 +14,7 @@ Download the DMG from [here](https://github.com/mysticalbits/lookaway-releases/r
 
 ## Requirements
 
-LookAway requires macOS 13.0 (Monterey) or later
+LookAway requires macOS 13.0 or later
 
 ## Key features
 
