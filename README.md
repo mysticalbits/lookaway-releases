@@ -1,4 +1,4 @@
-LookAway is a macOS app designed to help reduce eye strain by prompting users to take regular breaks after prolonged screen use.
+[LookAway](https://lookaway.com) is a macOS app designed to help reduce eye strain by prompting users to take regular breaks after prolonged screen use.
 
 It's gentle, smart, and fully customizable. Once launched, it takes a back seat and quietly takes care of your eye health - without ever interrupting your flow.
 
@@ -14,7 +14,7 @@ Download the DMG from [here](https://github.com/mysticalbits/lookaway-releases/r
 
 ## Requirements
 
-LookAway requires macOS 12.0 (Monterey) or later
+LookAway requires macOS 13.0 (Monterey) or later
 
 ## Key features
 
