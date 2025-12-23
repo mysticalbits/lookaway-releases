@@ -2,7 +2,7 @@ name: Update Release Summary
 
 on:
   release:
-    types: [published]
+    types: [published, edited, prereleased]
   workflow_dispatch:
 
 permissions:
