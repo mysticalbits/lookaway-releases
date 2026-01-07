@@ -1,5 +1,11 @@
 [
   {
+    "id": 274948965,
+    "tag_name": "2.0.0-beta.7",
+    "published_at": "2026-01-07T20:32:00Z",
+    "prerelease": true
+  },
+  {
     "id": 274601127,
     "tag_name": "2.0.0-beta.6",
     "published_at": "2026-01-06T18:10:10Z",
