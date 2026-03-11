@@ -89,3 +89,10 @@ jobs:
               console.error('Error in workflow:', error);
               core.setFailed(error.message);
             }
+
+      - name: Trigger Cloudflare Pages deploy
+        if: success()
+        env:
+          CF_PAGES_DEPLOY_HOOK_URL: ${{ secrets.CF_PAGES_DEPLOY_HOOK_URL }}
+        run: |
+          curl --fail --silent --show-error -X POST -d "" "$CF_PAGES_DEPLOY_HOOK_URL"
